@@ -1,0 +1,7 @@
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\bin\Debug\CachingExercise.exe.config
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\bin\Debug\CachingExercise.exe
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\bin\Debug\CachingExercise.pdb
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExercise.csprojResolveAssemblyReference.cache
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExercise.csproj.CoreCompileInputs.cache
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExercise.exe
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExercise.pdb
