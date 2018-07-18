@@ -30,7 +30,7 @@ namespace CachingExercise
             key = Console.ReadLine();
             value = Console.ReadLine();
 
-            return key + " " + value;
+            return this.setter + key + " " + value;
         }
 
         public string GetValue()

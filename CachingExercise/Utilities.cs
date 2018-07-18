@@ -4,6 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/**
+ * Holds static methods used in Main.
+ * 
+ * @details 
+ * 
+ * @author
+ * 
+ * @date 7/17/2018
+ * 
+ * @TODO 
+ * 
+ * 
+ */
+
 namespace CachingExercise
 {
     static class Utilities
@@ -13,24 +27,36 @@ namespace CachingExercise
         {
             Console.WriteLine("This program provides a simple interface to interact with either Redis or " +
                               "Memcache. Press [Enter] to continue");
+
             Console.ReadLine();
 
         }
 
         public static void MainMenu()
         {
-            while (true)
+            
+            string selection;
+            string[] validSelections = new string[] { "1", "2", "3" };
+
+            do
             {
-                string selection;
-                string[] validSelections = new string[] { "1", "2", "3" };
+                Console.WriteLine("Select a backend to use: [1] Redis\t[2] Memcached\t[3] Exit");
+                selection = Console.ReadLine();
+            } while (!validSelections.Contains(selection));
 
-                do
-                {
-                    Console.WriteLine("Select a backend to use: [1] Redis\t[2] Memcached\t[3] Exit");
-                    selection = Console.ReadLine();
-                } while (!validSelections.Contains(selection));
-
+            if(selection == "1")
+            {
+                SelectCache(1);
             }
+            else
+            {
+                Environment.Exit(0);
+            }
+            
+        }
+
+        public static void SelectCache(int selection)
+        {
 
         }
                 

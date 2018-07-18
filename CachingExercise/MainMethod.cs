@@ -5,6 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
+/**
+ * MainMethod consists only of function calls for clarity.
+ * 
+ * @details
+ * 
+ * @author Drew Engberson
+ * 
+ * @date 7/17/2018
+ * 
+ */
+
 namespace CachingExercise
 {
     class MainMethod
