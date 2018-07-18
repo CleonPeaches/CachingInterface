@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace CachingExercise
 {
-    interface IEssentialBehavior<T>
+    interface IEssentialBehavior
     {
      
-        string setKey();
+        string SetKey();
 
-        string getValue();
+        string GetValue();
 
-        string deleteKey();
+        string DeleteKey();
 
-        string renameKey();
+        string RenameKey();
 
-        string getKeys();
+        string GetKeys();
 
-        string deleteAllKeys();
+        string DeleteAllKeys();
 
     }
 }

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace CachingExercise
 {
-    class RedisWrapper : GenericBackend, IEssentialBehavior<RedisWrapper>
+    class RedisWrapper : GenericBackend, IEssentialBehavior
     {
-       
+        public string openServerText = "/C redis-server";
+        public string openClientText = "/C redis-cli";
+
         //Initializes wrapper object with Redis-specific syntax
         public RedisWrapper() {
 
@@ -21,7 +23,7 @@ namespace CachingExercise
 
         }
 
-        public string setKey()
+        public string SetKey()
         {
             string key, value;
 
@@ -31,7 +33,7 @@ namespace CachingExercise
             return key + " " + value;
         }
 
-        public string getValue()
+        public string GetValue()
         {
             string key;
 
@@ -40,7 +42,7 @@ namespace CachingExercise
             return this.getter + key;
         }      
 
-        public string deleteKey()
+        public string DeleteKey()
         {
             string key;
 
@@ -49,7 +51,7 @@ namespace CachingExercise
             return this.deleter + key;
         }
 
-        public string renameKey()
+        public string RenameKey()
         {
             string oldKey, newKey;
 
@@ -60,7 +62,7 @@ namespace CachingExercise
 
         }
 
-        public string getKeys()
+        public string GetKeys()
         {
             string pattern;
             pattern = Console.ReadLine();
@@ -68,7 +70,7 @@ namespace CachingExercise
             return this.getterOfKeys + pattern;
         }
 
-        public string deleteAllKeys()
+        public string DeleteAllKeys()
         {
             return this.deleterOfKeys;
         }

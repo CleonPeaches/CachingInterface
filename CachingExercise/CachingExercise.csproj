@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CachingExercise.cs" />
+    <Compile Include="MainMethod.cs" />
     <Compile Include="Parent Definitions\GenericBackend.cs" />
+    <Compile Include="Utilities.cs" />
     <Compile Include="Wrappers\RedisWrapper.cs" />
     <Compile Include="Parent Definitions\IEssentialBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
