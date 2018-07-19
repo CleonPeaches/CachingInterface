@@ -71,21 +71,24 @@ namespace CachingExercise
 
         public string RenameKey()
         {
-            string oldKey, newKey;
+            string oldKey, newKey, finalOutput;
 
             oldKey = Console.ReadLine();
             newKey = Console.ReadLine();
+            finalOutput = (string)(this.renamer + " " + oldKey + " " + newKey);
 
-            return this.renamer + oldKey + newKey;
+            return finalOutput;
 
         }
 
         public string GetKeys()
         {
-            string pattern;
-            pattern = Console.ReadLine();
+            string pattern, finalOutput;
 
-            return this.getterOfKeys + pattern;
+            pattern = Console.ReadLine();
+            finalOutput = (string)(this.getterOfKeys + " " + pattern);
+
+            return finalOutput;
         }
 
         public string DeleteAllKeys()
