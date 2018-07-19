@@ -8,8 +8,6 @@ using System.Diagnostics;
 /**
  * MainMethod consists only of function calls for clarity.
  * 
- * @details
- * 
  * @author Drew Engberson
  * 
  * @date 7/17/2018
@@ -26,7 +24,8 @@ namespace CachingExercise
 
             Utilities.MainMenu();
 
-            System.Diagnostics.Process.Start("CMD.exe", "/C redis-server");
+            Utilities.RedisLoop();
+
         }
     }
 }

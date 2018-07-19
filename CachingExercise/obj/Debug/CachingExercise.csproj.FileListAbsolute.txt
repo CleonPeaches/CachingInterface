@@ -5,3 +5,9 @@ C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExe
 C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExercise.csproj.CoreCompileInputs.cache
 C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExercise.exe
 C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExercise.pdb
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\bin\Debug\nunit.framework.dll
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\bin\Debug\StackExchange.Redis.dll
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\bin\Debug\nunit.framework.pdb
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\bin\Debug\nunit.framework.xml
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\bin\Debug\StackExchange.Redis.xml
+C:\Users\drewe\source\repos\CachingExercise\CachingExercise\obj\Debug\CachingExercise.csproj.CopyComplete
