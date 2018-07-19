@@ -32,66 +32,51 @@ namespace CachingExercise
             this.deleterOfKeys = "flushall";
             this.openServerText = "/K redis-server C:\\Users\\drewe\\Downloads\\redis\\redis.windows.conf";
             this.openClientText = "/K redis-cli";
-    }
+        }
 
-        public string SetKey()
+        public string SetKey(string key, string value)
         {
-            string key, value, finalOutput;
+            string finalOutput;
 
-            Console.WriteLine("Enter the name of your new key: ");
-            key = Console.ReadLine();
-
-            Console.WriteLine("Enter your new value: ");
-            value = Console.ReadLine();
+            
 
             finalOutput = (string)(this.setter + " " + key + " " + value);
 
             return finalOutput;
         }
 
-        public string GetValue()
+        public string GetValue(string key)
         {
-            string key, finalOutput;
+            string finalOutput;
 
-            Console.WriteLine("Enter the name of a key to get: ");
-            key = Console.ReadLine();
             finalOutput = (string)(this.getter + " " + key);
 
             return finalOutput;
         }      
 
-        public string DeleteKey()
+        public string DeleteKey(string key)
         {
-            string key, finalOutput;
+            string finalOutput;
 
-            Console.WriteLine("Enter the name of a key to delete: ");
-            key = Console.ReadLine();
             finalOutput = (string)(this.deleter + " " + key);
 
             return finalOutput;
         }
 
-        public string RenameKey()
+        public string RenameKey(string oldKey, string newKey)
         {
-            string oldKey, newKey, finalOutput;
-
-            Console.WriteLine("Enter the name of the key you wish to change: ");
-            oldKey = Console.ReadLine();
-
-            Console.WriteLine("Enter the new name of the key: ");
-            newKey = Console.ReadLine();
+            string finalOutput;
+                        
             finalOutput = (string)(this.renamer + " " + oldKey + " " + newKey);
 
             return finalOutput;
 
         }
 
-        public string GetKeys()
+        public string GetKeys(string pattern)
         {
-            string pattern, finalOutput;
-
-            Console.WriteLine("Enter the pattern of keys you wish to view: ");
-            pattern = Console.ReadLine();
+            string finalOutput;
+            
             finalOutput = (string)(this.getterOfKeys + " " + pattern);
 
             return finalOutput;

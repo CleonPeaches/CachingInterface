@@ -77,7 +77,7 @@ namespace CachingExercise
             while (true)
             {
                 string[] validSelections = new string[] { "1", "2", "3", "4", "5", "6", "7" };
-                string selection, command, result;
+                string selection, key, value, pattern, oldKey, newKey = "";
 
                 do
                 {
@@ -93,27 +93,55 @@ namespace CachingExercise
                 switch (selection)
                 {
                     case "1":
-                        CommandTransmitter(redWrap.SetKey(), client);
+                        Console.WriteLine("Enter name of new key: ");
+                        key = Console.ReadLine();
+
+                        Console.WriteLine("Enter new value: ");
+                        value = Console.ReadLine();
+
+                        CommandTransmitter(redWrap.SetKey(key, value), client);
+
                         break;
 
                     case "2":
-                        CommandTransmitter(redWrap.GetValue(), client);
+                        Console.WriteLine("Enter the name of a key to get: ");
+                        key = Console.ReadLine();
+
+                        CommandTransmitter(redWrap.GetValue(key), client);
+
                         break;
 
                     case "3":
-                        CommandTransmitter(redWrap.DeleteKey(), client);
+                        Console.WriteLine("Enter the name of a key to delete: ");
+                        key = Console.ReadLine();
+
+                        CommandTransmitter(redWrap.DeleteKey(key), client);
+
                         break;
 
                     case "4":
-                        CommandTransmitter(redWrap.RenameKey(), client);
+                        Console.WriteLine("Enter the name of the key you wish to change: ");
+                        oldKey = Console.ReadLine();
+
+                        Console.WriteLine("Enter the new name of the key: ");
+                        newKey = Console.ReadLine();
+
+                        CommandTransmitter(redWrap.RenameKey(oldKey, newKey), client);
+
                         break;
 
                     case "5":
-                        CommandTransmitter(redWrap.GetKeys(), client);
+
+                        Console.WriteLine("Enter the pattern of keys you wish to view: ");
+                        pattern = Console.ReadLine();
+
+                        CommandTransmitter(redWrap.GetKeys(pattern), client);
+
                         break;
 
                     case "6":
                         CommandTransmitter(redWrap.DeleteAllKeys(), client);
+                        Console.WriteLine("All keys deleted.");
                         break;
 
                     default:
@@ -127,11 +155,8 @@ namespace CachingExercise
 
         public static void CommandTransmitter(string command, System.Diagnostics.Process client)
         {
-            string result;
-
             client.StandardInput.WriteLine(command);
-            result = client.StandardOutput.ReadLine();
-            Console.WriteLine("\n" + result);
+            Console.WriteLine("\n" + client.StandardOutput.ReadLine());
 
         }
 

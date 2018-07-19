@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="MainMethod.cs" />
     <Compile Include="Parent Definitions\GenericBackend.cs" />
+    <Compile Include="UnitTests\RedisWrapperTests.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Wrappers\RedisWrapper.cs" />
     <Compile Include="Parent Definitions\IEssentialBehavior.cs" />
