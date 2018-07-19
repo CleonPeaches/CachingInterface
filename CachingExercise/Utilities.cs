@@ -7,14 +7,14 @@ using System.Diagnostics;
 
 /**
  * Holds static methods used in Main.
- * 
+ *  
  * @details 
- * 
+ *  
  * @author Drew Engberson
  * 
- * @date 7/17/2018
+ * @date 7/18/2018
  * 
- * @TODO Refactor SelectCache to accommodate additional back ends.
+ * @TODO Refactor RedisLoop to accommodate additional back ends.
  * 
  */
 
@@ -25,8 +25,8 @@ namespace CachingExercise
 
         public static void PrintIntro()
         {
-            Console.WriteLine("REDIS WRAPPER\n\nThis is a simple interface for using Redis" +
-                              " without worrying about syntax. \n\nPress [Enter] to continue");
+            Console.WriteLine("REDIS WRAPPER\n\nThis is a simple interface for using Redis\n" +
+                              "without needing to know proper command syntax. \n\nPress [Enter] to continue");
 
             Console.ReadLine();
 
@@ -61,7 +61,7 @@ namespace CachingExercise
             server.StartInfo.FileName = "CMD.exe";
             server.StartInfo.Arguments = redWrap.openServerText;
             server.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
-            
+
             client.StartInfo.FileName = "CMD.exe";
             client.StartInfo.Arguments = redWrap.openClientText;
             client.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
@@ -72,18 +72,6 @@ namespace CachingExercise
             Console.WriteLine("\nOpening Redis server...\n");
 
             server.Start();
-            /*
-            try
-            {
-                server.Start();
-            }
-            catch(InvalidOperationException)
-            {
-                Console.WriteLine("No such file! Terminating...");
-                Console.ReadLine();
-                Environment.Exit(0);
-            }
-            */
             client.Start();
             
             while (true)
@@ -94,31 +82,59 @@ namespace CachingExercise
                 do
                 {
                     Console.WriteLine("\nSelect an operation: \n\n[1] Set a key\n" +
-                        "[2] Get a Value\n[3] Delete a Key\n[4] Rename a Key\n" +
-                        "[5] Get all keys that match a pattern\n[6] Delete all keys\n" +
+                        "[2] Get a value\n[3] Delete a key\n[4] Rename a key\n" +
+                        "[5] Get keys that match specified pattern\n[6] Delete all keys\n" +
                         "[7] Exit to main menu\n");
 
                     selection = Console.ReadLine();
 
                 } while (!validSelections.Contains(selection));
-
+                
                 switch (selection)
                 {
                     case "1":
-                        command = redWrap.SetKey();
-                        client.StandardInput.WriteLine(command);
-                        result = client.StandardOutput.ReadLine();
-                        Console.WriteLine(result);
+                        CommandTransmitter(redWrap.SetKey(), client);
+                        break;
+
+                    case "2":
+                        CommandTransmitter(redWrap.GetValue(), client);
+                        break;
+
+                    case "3":
+                        CommandTransmitter(redWrap.DeleteKey(), client);
+                        break;
+
+                    case "4":
+                        CommandTransmitter(redWrap.RenameKey(), client);
+                        break;
+
+                    case "5":
+                        CommandTransmitter(redWrap.GetKeys(), client);
+                        break;
+
+                    case "6":
+                        CommandTransmitter(redWrap.DeleteAllKeys(), client);
                         break;
 
                     default:
-                        Console.WriteLine("poo");
+                        MainMenu();
                         break;
                 }
 
             }
 
         }
-                
+
+        public static void CommandTransmitter(string command, System.Diagnostics.Process client)
+        {
+            string result;
+
+            client.StandardInput.WriteLine(command);
+            result = client.StandardOutput.ReadLine();
+            Console.WriteLine("\n" + result);
+
+        }
+
     }
+
 }

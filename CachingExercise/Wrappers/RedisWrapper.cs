@@ -41,7 +41,7 @@ namespace CachingExercise
             Console.WriteLine("Enter the name of your new key: ");
             key = Console.ReadLine();
 
-            Console.WriteLine("Enter the name of your new value: ");
+            Console.WriteLine("Enter your new value: ");
             value = Console.ReadLine();
 
             finalOutput = (string)(this.setter + " " + key + " " + value);
@@ -53,6 +53,7 @@ namespace CachingExercise
         {
             string key, finalOutput;
 
+            Console.WriteLine("Enter the name of a key to get: ");
             key = Console.ReadLine();
             finalOutput = (string)(this.getter + " " + key);
 
@@ -63,6 +64,7 @@ namespace CachingExercise
         {
             string key, finalOutput;
 
+            Console.WriteLine("Enter the name of a key to delete: ");
             key = Console.ReadLine();
             finalOutput = (string)(this.deleter + " " + key);
 
@@ -73,7 +75,10 @@ namespace CachingExercise
         {
             string oldKey, newKey, finalOutput;
 
+            Console.WriteLine("Enter the name of the key you wish to change: ");
             oldKey = Console.ReadLine();
+
+            Console.WriteLine("Enter the new name of the key: ");
             newKey = Console.ReadLine();
             finalOutput = (string)(this.renamer + " " + oldKey + " " + newKey);
 
@@ -85,6 +90,7 @@ namespace CachingExercise
         {
             string pattern, finalOutput;
 
+            Console.WriteLine("Enter the pattern of keys you wish to view: ");
             pattern = Console.ReadLine();
             finalOutput = (string)(this.getterOfKeys + " " + pattern);
 
